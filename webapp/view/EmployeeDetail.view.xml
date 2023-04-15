@@ -1,0 +1,143 @@
+<mvc:XMLView
+    id="employeeDetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m">
+
+    <!-- <m:Page
+        id="employeeDetailPage"
+        title="Employee Detail"
+        backgroundDesign="List"
+        showNavButton="true"
+        navButtonPress=".onPressMasterBack">
+
+        <m:Title text="{employees>FirstName}" />
+
+    </m:Page> -->
+
+    <!-- useIconTabBar="true" -->
+    <ObjectPageLayout 
+        id="ObjectPageLayout"
+		enableLazyLoading="true"
+		useIconTabBar="false"
+		showTitleInHeaderContent="true"
+
+        showEditHeaderButton="true"
+        showFooter="true">
+        
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Denise Smith" wrapping="true"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<m:Avatar class="sapUiTinyMarginEnd"/>
+						<m:Title text="Denise Smith" wrapping="true" />
+					</m:FlexBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Text text="Senior UI Developer"/>
+				</expandedContent>
+
+				<snappedContent>
+					<m:Text text="Senior UI Developer"/>
+				</snappedContent>
+
+				<snappedTitleOnMobile>
+					<m:Title text="Senior UI Developer"/>
+				</snappedTitleOnMobile>
+
+				<actions>
+					<m:Button text="Edit" type="Emphasized"/>
+					<m:Button type="Transparent" text="Back"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+			<m:Avatar class="sapUiSmallMarginEnd" displaySize="L" />
+		</headerContent>
+
+        <sections>
+			<ObjectPageSection titleUppercase="false" id="goals" title="Titulo ObjectPageSection">
+            <heading>
+                <m:Title text="Heading ObjectPageSection" />
+            </heading>
+			<subSections>
+				<ObjectPageSubSection id="goalsSS1" titleUppercase="false">
+					<blocks>
+						<m:Text text="Texto dentro de subseccion 1"></m:Text>
+					</blocks>
+				</ObjectPageSubSection>
+                <ObjectPageSubSection id="goalsSS2" titleUppercase="false">
+					<blocks>
+						<m:Text text="Texto dentro de subseccion 2"></m:Text>
+					</blocks>
+				</ObjectPageSubSection>
+			</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection titleUppercase="false" id="personal" title="Titulo ObjectPageSection">
+            <heading>
+                <m:Title text="Heading ObjectPageSection22222" />
+            </heading>
+				<subSections>
+					<ObjectPageSubSection id="personalSS1" title="CCCCCCCCCCCCCC" titleUppercase="false">
+						<blocks>
+							<m:Text text="Texto dentro de subseccion"></m:Text>
+						</blocks>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection id="personalSS2" title="Titulo ObjectPageSection" titleUppercase="false">
+						<blocks>
+							<m:Text text="Texto dentro de subseccion"></m:Text>
+						</blocks>
+						<moreBlocks>
+							<m:Text text="Texto dentro de subseccion"></m:Text>
+						</moreBlocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection titleUppercase="false" id="employment" title="Employment">
+				<subSections>
+					<ObjectPageSubSection id="employmentSS1" title="Job information" titleUppercase="false">
+						<blocks>
+							<m:Text text="Texto dentro de subseccion"></m:Text>
+						</blocks>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection id="employmentSS2" title="Employee Details" titleUppercase="false">
+						<blocks>
+							<m:Text text="asasasas"></m:Text>
+						</blocks>
+						<moreBlocks>
+							<m:Text text="asasasas"></m:Text>
+						</moreBlocks>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection id="employmentSS3" title="Job Relationship" titleUppercase="false">
+						<blocks>
+							<m:Text text="asasasas"></m:Text>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+        <footer>
+			<m:OverflowToolbar>
+                <m:Title text="Are you sure to save changes?" />
+				<m:ToolbarSpacer />
+				<m:Button type="Accept" text="Accept"/>
+				<m:Button type="Reject" text="Reject"/>
+			</m:OverflowToolbar>
+		</footer>
+        
+	</ObjectPageLayout>
+
+
+</mvc:XMLView>

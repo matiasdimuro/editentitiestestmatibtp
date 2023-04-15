@@ -1,0 +1,35 @@
+<mvc:XMLView 
+    controllerName="hexagon.editentitytestmatibtp.controller.EmployeeList"
+    id="employeesListView"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="employeesPage"
+        title="Employees List"
+        backgroundDesign= "List">
+
+          <!-- AGREGAR TOOLBAR PARA FILTRAR -->
+            <List id="employeesList" items="{employees>/results}">
+
+                <headerToolbar>
+                    <Toolbar>
+                        <SearchField 
+                            id="nameSearchField"
+                            placeholder="Search by name"
+                            search=".onSearch"/>
+                    </Toolbar>
+                </headerToolbar>
+                    
+                <items>
+                    
+                    <StandardListItem
+                        icon="sap-icon://employee"
+                        title="{employees>TitleOfCourtesy} {employees>FirstName} {employees>LastName}" 
+                        type="Navigation" press=".onSeeEmployeeDetail" />
+                </items>
+            </List>
+    </Page>
+
+</mvc:XMLView>

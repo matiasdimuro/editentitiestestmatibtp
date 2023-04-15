@@ -1,0 +1,36 @@
+<!-- <mvc:View controllerName="hexagon.editentitytestmatibtp.controller.App"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content />
+    </Page>
+</mvc:View> -->
+
+<mvc:View
+    id="appView"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<App id="app">
+    
+        <Page id="appPage" showHeader="false">
+    
+            <SplitApp id="SplitApp" initialDetail="employeeDetailView" initialMaster="employeesPage">
+
+                <masterPages>
+                    <mvc:XMLView id="employeesListView" viewName="hexagon.editentitytestmatibtp.view.EmployeesList" />               
+                </masterPages>
+
+                <detailPages>
+                    <mvc:XMLView id="mainAppPageView" viewName="hexagon.editentitytestmatibtp.view.MainAppPage"/>
+                    <!-- BINDEAR con EMPLOYEE -->
+                    <mvc:XMLView id="employeeDetailView" viewName="hexagon.editentitytestmatibtp.view.EmployeeDetail" /> 
+                </detailPages>
+
+            </SplitApp> 
+        
+        </Page>
+
+    </App>
+
+</mvc:View>
