@@ -108,29 +108,51 @@
                 "viewType": "XML",
                 "async": true,
                 "viewPath": "hexagon.editentitytestmatibtp.view",
-                "controlId": "app",
+                "controlAggregation": "masterPages",
+                "controlId": "SplitApp",
                 "clearControlAggregation": false
             },
             "routes": [
                 {
-                    "name": "main",
+                    "name": "master",
                     "pattern": "",
-                    "target": "main"
+                    "target": [
+                        "master",
+                        "main"
+                    ]
                 },
                 {
                     "name": "employee",
                     "pattern": "employee/{id}",
-                    "target": "main"
+                    "target": [
+                        "master",
+                        "employee"
+                    ]
                 }
             ],
             "targets": {
+                "master": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": true,
+                    "viewId": "employeesListView",
+                    "viewName": "EmployeesList"
+                },
                 "main": {
                     "viewType": "XML",
-                    "controlAggregation": "pages",
+                    "transition": "slide",
+                    "controlAggregation": "detailPages",
+                    "clearControlAggregation": false,
+                    "viewId": "mainAppPageView",
+                    "viewName": "MainAppPage"
+                },
+                "employee": {
+                    "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
-                    "viewId": "appView",
-                    "viewName": "App"
+                    "controlAggregation": "detailPages",
+                    "viewId": "employeeDetailView",
+                    "viewName": "EmployeeDetail"
                 }
             }
         },

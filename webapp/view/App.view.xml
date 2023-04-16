@@ -15,7 +15,7 @@
     
         <Page id="appPage" showHeader="false">
     
-            <SplitApp id="SplitApp" initialDetail="employeeDetailView" initialMaster="employeesPage">
+            <SplitApp id="SplitApp" initialDetail="mainAppPageView" initialMaster="employeesPage">
 
                 <masterPages>
                     <mvc:XMLView id="employeesListView" viewName="hexagon.editentitytestmatibtp.view.EmployeesList" />               
@@ -23,7 +23,6 @@
 
                 <detailPages>
                     <mvc:XMLView id="mainAppPageView" viewName="hexagon.editentitytestmatibtp.view.MainAppPage"/>
-                    <!-- BINDEAR con EMPLOYEE -->
                     <mvc:XMLView id="employeeDetailView" viewName="hexagon.editentitytestmatibtp.view.EmployeeDetail" /> 
                 </detailPages>
 

@@ -49,8 +49,8 @@ sap.ui.define([
                 id: window.encodeURIComponent(sEmployeePath.substr(1))
             });
 
-            var oSplitApp = this._getSplitAppObj();
-            oSplitApp.toDetail("employeeDetailPage");
+            // var oSplitApp = this._getSplitAppObj();
+            // oSplitApp.toDetail("employeeDetailPage");
             // oSplitApp.toDetail(this.createId("employeeDetailPage"));
             // debugger;
 
@@ -66,11 +66,13 @@ sap.ui.define([
 
             var aFilter = [];
 
-            // TODO: Revisar logica de busqueda.
-
             if (aNames.length > 0) {
-                var oFilterFirstName = new Filter("FirstName", FilterOperator.Contains, aNames[0]);
-                aFilter.push(oFilterFirstName)
+
+                var oFilterFirstName = new Filter("FirstName", FilterOperator.Contains, aNames[0]);                
+                var oFilterLastName = new Filter("LastName", FilterOperator.Contains, aNames[0]) ;
+                
+                var aFilters = new Filter([oFilterFirstName, oFilterLastName], false);
+                aFilter.push(aFilters);
             }
 
             if (aNames.length > 1) {
@@ -84,16 +86,19 @@ sap.ui.define([
             var sJsonModel = "employees";
             var oJsonModel = this._oComponent.getModel(sJsonModel);
 
+            this.getView().setBusy(true);
             oODataModel.read("/Employees", {
 
                 filters: aFilter,
 
                 success: function(oData) {
                     oJsonModel.setData(oData);
+                    this.getView().setBusy(false);
                 }.bind(this),
 
                 error: function(err) {
                     console.log(err);
+                    this.getView().setBusy(false);
                 }
             });
 

@@ -22,7 +22,7 @@ sap.ui.define([
 
                 // enable routing
                 this.getRouter().initialize();
-                this.getRouter().navTo("main", {}, true)
+                this.getRouter().navTo("master", {}, true)
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");

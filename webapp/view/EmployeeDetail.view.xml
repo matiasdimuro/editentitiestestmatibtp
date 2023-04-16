@@ -1,25 +1,16 @@
 <mvc:XMLView
+	controllerName="hexagon.editentitytestmatibtp.controller.EmployeeDetail"
     id="employeeDetailView"
     xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
     xmlns="sap.uxap"
     xmlns:m="sap.m">
 
-    <!-- <m:Page
-        id="employeeDetailPage"
-        title="Employee Detail"
-        backgroundDesign="List"
-        showNavButton="true"
-        navButtonPress=".onPressMasterBack">
-
-        <m:Title text="{employees>FirstName}" />
-
-    </m:Page> -->
-
     <!-- useIconTabBar="true" -->
     <ObjectPageLayout 
-        id="ObjectPageLayout"
+        id="employeeDetailPageLayout"
 		enableLazyLoading="true"
-		useIconTabBar="false"
+		useIconTabBar="true"
 		showTitleInHeaderContent="true"
 
         showEditHeaderButton="true"
@@ -28,18 +19,18 @@
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
-					<m:Title text="Denise Smith" wrapping="true"/>
+					<m:Title text="{employees>FirstName} {employees>FirstName}" wrapping="true"/>
 				</expandedHeading>
 
 				<snappedHeading>
 					<m:FlexBox fitContainer="true" alignItems="Center">
-						<m:Avatar class="sapUiTinyMarginEnd"/>
-						<m:Title text="Denise Smith" wrapping="true" />
+						<m:Avatar src="./drawables/picture.jpg" class="sapUiTinyMarginEnd"/>
+						<m:Title text="{employees>FirstName} {employees>FirstName}" wrapping="true" />
 					</m:FlexBox>
 				</snappedHeading>
 
 				<expandedContent>
-					<m:Text text="Senior UI Developer"/>
+					<m:Text text="{employees>Title}"/>
 				</expandedContent>
 
 				<snappedContent>
@@ -51,8 +42,15 @@
 				</snappedTitleOnMobile>
 
 				<actions>
-					<m:Button text="Edit" type="Emphasized"/>
-					<m:Button type="Transparent" text="Back"/>
+					<m:Button 
+						text="Edit" 
+						type="Emphasized"
+						press=".toggleFooter"/>
+					<m:Button 
+						type="Transparent" 
+						text="Go back" 
+						icon="sap-icon://nav-back" 
+						press=".onBackMaster"/>
 				</actions>
 			</ObjectPageDynamicHeaderTitle>
 		</headerTitle>
@@ -62,66 +60,61 @@
 		</headerContent>
 
         <sections>
-			<ObjectPageSection titleUppercase="false" id="goals" title="Titulo ObjectPageSection">
-            <heading>
+			<ObjectPageSection id="personalFileSection" title="Personal File">
+            <!-- <heading>
                 <m:Title text="Heading ObjectPageSection" />
-            </heading>
+            </heading> -->
 			<subSections>
-				<ObjectPageSubSection id="goalsSS1" titleUppercase="false">
+                <ObjectPageSubSection id="addressSubsection" title="Address">
+					<!-- <actions>
+						<m:Button text="asas" />
+					</actions> -->
 					<blocks>
-						<m:Text text="Texto dentro de subseccion 1"></m:Text>
+						<m:Text text="Adress form"></m:Text>
 					</blocks>
 				</ObjectPageSubSection>
-                <ObjectPageSubSection id="goalsSS2" titleUppercase="false">
+				<ObjectPageSubSection id="contactSubsection" title="Contact">
+					<!-- <actions>
+						<m:Button text="asas" />
+					</actions> -->
 					<blocks>
-						<m:Text text="Texto dentro de subseccion 2"></m:Text>
+						<m:Text text="Contact form"></m:Text>
+					</blocks>
+				</ObjectPageSubSection>
+				<ObjectPageSubSection id="generalSubsection" title="General">
+					<!-- <actions>
+						<m:Button text="asas" />
+					</actions> -->
+					<blocks>
+						<m:Text text="General form"></m:Text>
 					</blocks>
 				</ObjectPageSubSection>
 			</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection titleUppercase="false" id="personal" title="Titulo ObjectPageSection">
-            <heading>
+			<ObjectPageSection id="jobFileSection" title="Job file">
+            <!-- <heading>
                 <m:Title text="Heading ObjectPageSection22222" />
-            </heading>
+            </heading> -->
 				<subSections>
-					<ObjectPageSubSection id="personalSS1" title="CCCCCCCCCCCCCC" titleUppercase="false">
+					<ObjectPageSubSection id="occupation" title="Occupation">
 						<blocks>
-							<m:Text text="Texto dentro de subseccion"></m:Text>
+							<m:Text text="Occupation subsection"></m:Text>
 						</blocks>
 					</ObjectPageSubSection>
-
-					<ObjectPageSubSection id="personalSS2" title="Titulo ObjectPageSection" titleUppercase="false">
+					<ObjectPageSubSection id="general" title="General">
 						<blocks>
-							<m:Text text="Texto dentro de subseccion"></m:Text>
+							<m:Text text="General subsection"></m:Text>
 						</blocks>
-						<moreBlocks>
-							<m:Text text="Texto dentro de subseccion"></m:Text>
-						</moreBlocks>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection titleUppercase="false" id="employment" title="Employment">
+			<ObjectPageSection id="aboutSection" title="About">
 				<subSections>
-					<ObjectPageSubSection id="employmentSS1" title="Job information" titleUppercase="false">
+					<ObjectPageSubSection id="descriptionSubsection" title="Description">
 						<blocks>
-							<m:Text text="Texto dentro de subseccion"></m:Text>
-						</blocks>
-					</ObjectPageSubSection>
-
-					<ObjectPageSubSection id="employmentSS2" title="Employee Details" titleUppercase="false">
-						<blocks>
-							<m:Text text="asasasas"></m:Text>
-						</blocks>
-						<moreBlocks>
-							<m:Text text="asasasas"></m:Text>
-						</moreBlocks>
-					</ObjectPageSubSection>
-
-					<ObjectPageSubSection id="employmentSS3" title="Job Relationship" titleUppercase="false">
-						<blocks>
-							<m:Text text="asasasas"></m:Text>
+							<m:Text text="Description subsection"></m:Text>
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
@@ -130,7 +123,7 @@
 
         <footer>
 			<m:OverflowToolbar>
-                <m:Title text="Are you sure to save changes?" />
+                <m:Title level="H1" text="Are you sure to save changes?" class="sapUiSmallMarginBegin" />
 				<m:ToolbarSpacer />
 				<m:Button type="Accept" text="Accept"/>
 				<m:Button type="Reject" text="Reject"/>
