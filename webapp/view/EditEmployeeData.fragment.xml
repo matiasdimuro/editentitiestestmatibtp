@@ -1,0 +1,155 @@
+<core:FragmentDefinition
+    id="editEmployeeDetailFragment"
+    xmlns:m="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+    xmlns="sap.uxap">
+
+    <!-- useIconTabBar="true" -->
+    <ObjectPageLayout 
+        id="employeeDetailPageLayout"
+		enableLazyLoading="true"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+        showFooter="false">
+        
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{employees>FirstName} {employees>LastName}" wrapping="true"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<m:Avatar src="../drawables/picture.jpg" class="sapUiTinyMarginEnd"/>
+						<m:Title text="{employees>FirstName} {employees>FirstName}" wrapping="true" />
+					</m:FlexBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Text text="{employees>Title}"/>
+				</expandedContent>
+
+				<snappedContent>
+					<m:Text text="Senior UI Developer"/>
+				</snappedContent>
+
+				<snappedTitleOnMobile>
+					<m:Title text="Senior UI Developer"/>
+				</snappedTitleOnMobile>
+
+				<actions>
+					<m:Button 
+						text="Display" 
+						type="Transparent"
+						press=".onDisplay"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+			<m:Avatar src="../drawables/picture.jpg" class="sapUiSmallMarginEnd" displaySize="L" />
+		</headerContent>
+
+        <sections>
+			<ObjectPageSection id="personalFileSection" title="Personal File">
+            <!-- <heading>
+                <m:Title text="Heading ObjectPageSection" />
+            </heading> -->
+			<subSections>
+                <ObjectPageSubSection id="addressSubsection" title="Address" class="sapUiMediumMarginTop">
+					<!-- <actions>
+						<m:Button text="asas" />
+					</actions> -->
+					<f:SimpleForm 
+						editable="true"
+						layout="ResponsiveGridLayout">
+						<f:content>
+							<m:Label vAlign="Middle" text="Address" />
+							<m:Input value="{employees>Address}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Label vAlign="Middle" text="City" />
+							<m:Input value="{employees>City}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Label vAlign="Middle" text="Region" />
+							<m:Input value="{employees>Region}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Label vAlign="Middle" text="Country" />
+							<m:Input value="{employees>Country}" class="sapUiSmallMarginBegin"></m:Input>
+						</f:content>
+					</f:SimpleForm>
+				</ObjectPageSubSection>
+				<ObjectPageSubSection id="contactSubsection" title="Contact" class="sapUiMediumMarginTop">
+					<f:SimpleForm 
+						editable="true"
+						layout="ResponsiveGridLayout">
+						<f:content>
+							<m:Label vAlign="Middle" text="Home phone" />
+							<m:Input value="{employees>HomePhone}" class="sapUiSmallMarginBegin"></m:Input>
+						</f:content>
+					</f:SimpleForm>
+				</ObjectPageSubSection>
+				<ObjectPageSubSection id="generalSubsection" title="General" class="sapUiMediumMarginTop">
+					<f:SimpleForm 
+						editable="true"
+						layout="ResponsiveGridLayout">
+						<f:content>
+							<m:Label vAlign="Middle" text="Birth date" />
+							<m:Input value="{employees>BirthDate}" class="sapUiSmallMarginBegin"></m:Input>
+						</f:content>
+					</f:SimpleForm>
+				</ObjectPageSubSection>
+			</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="jobFileSection" title="Job file">
+				<subSections>
+					<ObjectPageSubSection id="occupation" title="Occupation" class="sapUiMediumMarginTop">
+						<f:SimpleForm 
+							editable="true"
+							layout="ResponsiveGridLayout">
+							<f:content>
+								<m:Label vAlign="Middle" text="Occupation" />
+								<m:Input value="{employees>Title}" class="sapUiSmallMarginBegin"></m:Input>
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection id="general" title="General" class="sapUiMediumMarginTop">
+						<f:SimpleForm 
+							editable="true"
+							layout="ResponsiveGridLayout">
+							<f:content>
+								<m:Label vAlign="Middle" text="Hire date" />
+								<m:Input value="{employees>HireDate}" class="sapUiSmallMarginBegin"></m:Input>
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="aboutSection" title="About" class="sapUiMediumMarginTop">
+				<subSections>
+					<ObjectPageSubSection id="descriptionSubsection" title="Description">
+						<f:SimpleForm 
+							editable="true"
+							layout="ResponsiveGridLayout">
+							<f:content>
+								<m:Label vAlign="Middle" text="Description" />
+								<m:Input value="{employees>Notes}" class="sapUiSmallMarginBegin"></m:Input>
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+        <footer>
+			<m:OverflowToolbar>
+                <m:Title level="H1" text="Are you sure to save changes?" class="sapUiSmallMarginBegin" />
+				<m:ToolbarSpacer />
+				<m:Button type="Accept" text="Accept" press=".onSaveChanges"/>
+				<m:Button type="Reject" text="Decline" press=".onCancelChanges"/>
+			</m:OverflowToolbar>
+		</footer>
+        
+	</ObjectPageLayout>
+
+</core:FragmentDefinition>

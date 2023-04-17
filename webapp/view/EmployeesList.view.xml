@@ -10,7 +10,6 @@
         title="Employees List"
         backgroundDesign= "List">
 
-          <!-- AGREGAR TOOLBAR PARA FILTRAR -->
             <List id="employeesList" items="{employees>/results}">
 
                 <headerToolbar>

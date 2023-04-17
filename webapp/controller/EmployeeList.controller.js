@@ -49,11 +49,6 @@ sap.ui.define([
                 id: window.encodeURIComponent(sEmployeePath.substr(1))
             });
 
-            // var oSplitApp = this._getSplitAppObj();
-            // oSplitApp.toDetail("employeeDetailPage");
-            // oSplitApp.toDetail(this.createId("employeeDetailPage"));
-            // debugger;
-
             MessageToast.show("See employee details");
         },
 

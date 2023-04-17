@@ -9,21 +9,26 @@
 <mvc:View
     id="appView"
 	xmlns="sap.m"
+    xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
 
 	<App id="app">
     
         <Page id="appPage" showHeader="false">
     
-            <SplitApp id="SplitApp" initialDetail="mainAppPageView" initialMaster="employeesPage">
+            <SplitApp 
+                mode="ShowHideMode" 
+                id="SplitApp" 
+                initialDetail="mainAppPageView" 
+                initialMaster="employeesPage">
 
                 <masterPages>
-                    <mvc:XMLView id="employeesListView" viewName="hexagon.editentitytestmatibtp.view.EmployeesList" />               
+                    <!-- <mvc:XMLView id="employeesListView" viewName="hexagon.editentitytestmatibtp.view.EmployeesList" />                -->
                 </masterPages>
 
                 <detailPages>
                     <mvc:XMLView id="mainAppPageView" viewName="hexagon.editentitytestmatibtp.view.MainAppPage"/>
-                    <mvc:XMLView id="employeeDetailView" viewName="hexagon.editentitytestmatibtp.view.EmployeeDetail" /> 
+                    <!-- <mvc:XMLView id="employeeDetailView" viewName="hexagon.editentitytestmatibtp.view.EmployeeDetail" />  -->
                 </detailPages>
 
             </SplitApp> 

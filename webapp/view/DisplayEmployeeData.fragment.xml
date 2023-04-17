@@ -1,0 +1,205 @@
+<core:FragmentDefinition
+    id="displayEmployeeDetailFragment"
+    xmlns:m="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+    xmlns="sap.uxap">
+
+    <!-- useIconTabBar="true"	 -->
+    <ObjectPageLayout 
+        id="employeeDetailPageLayout"
+		enableLazyLoading="true"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+        showFooter="false">
+        
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{employees>FirstName} {employees>LastName}" wrapping="true"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<m:Avatar src="../drawables/picture.jpg" class="sapUiTinyMarginEnd"/>
+						<m:Title text="{employees>FirstName} {employees>FirstName}" wrapping="true" />
+					</m:FlexBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Text text="{employees>Title}"/>
+				</expandedContent>
+
+				<snappedContent>
+					<m:Text text="Senior UI Developer"/>
+				</snappedContent>
+
+				<snappedTitleOnMobile>
+					<m:Title text="Senior UI Developer"/>
+				</snappedTitleOnMobile>
+
+				<actions>
+					<m:Button 
+						text="Edit" 
+						type="Emphasized"
+						press=".onEdit"/>
+					<m:Button 
+						type="Transparent" 
+						text="Go back" 
+						icon="sap-icon://nav-back" 
+						press=".onBackMaster"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+			<m:Avatar src="../drawables/picture.jpg" class="sapUiSmallMarginEnd" displaySize="L" />
+		</headerContent>
+
+        <sections>
+			<ObjectPageSection id="personalFileSection" title="Personal File">
+            <!-- <heading>
+                <m:Title text="Heading ObjectPageSection" />
+            </heading> -->
+			<subSections>
+                <ObjectPageSubSection id="addressSubsection" title="Address" class="sapUiMediumMarginTop">
+					<!-- <actions>
+						<m:Button text="asas" />
+					</actions> -->
+					<f:SimpleForm 
+						editable="false"
+						layout="ResponsiveGridLayout">
+						<f:content>
+							<m:Label vAlign="Middle" text="Address" />
+							<m:Text 
+								text="{
+									path: 'employees>Address',
+									formatter: '.formatters.verifyEmpyData'
+								}" 
+								class="sapUiSmallMarginBegin">
+							</m:Text>
+							<m:Label vAlign="Middle" text="City" />
+							<m:Text 
+								text="{
+									path: 'employees>City',
+									formatter: '.formatters.verifyEmpyData'
+								}" 
+								class="sapUiSmallMarginBegin">
+							</m:Text>
+							<m:Label vAlign="Middle" text="Region" />
+							<m:Text 
+								text="{
+									path: 'employees>Region',
+									formatter: '.formatters.verifyEmptyData'
+								}" 
+								class="sapUiSmallMarginBegin">
+							</m:Text>
+							<m:Label vAlign="Middle" text="Country" />
+							<m:Text 
+								text="{
+									path: 'employees>Country',
+									formatter: '.formatters.verifyEmpyData'
+								}" 
+								class="sapUiSmallMarginBegin">
+							</m:Text>
+						</f:content>
+					</f:SimpleForm>
+				</ObjectPageSubSection>
+				<ObjectPageSubSection id="contactSubsection" title="Contact" class="sapUiMediumMarginTop">
+					<f:SimpleForm 
+						editable="false"
+						layout="ResponsiveGridLayout">
+						<f:content>
+							<m:Label vAlign="Middle" text="Home phone" />
+							<m:Text 
+								text="{
+									path: 'employees>HomePhone',
+									formatter: '.formatters.verifyEmpyData'
+								}" 
+								class="sapUiSmallMarginBegin">
+							</m:Text>
+						</f:content>
+					</f:SimpleForm>
+				</ObjectPageSubSection>
+				<ObjectPageSubSection id="generalSubsection" title="General" class="sapUiMediumMarginTop">
+					<f:SimpleForm 
+						editable="false"
+						layout="ResponsiveGridLayout">
+						<f:content>
+							<m:Label vAlign="Middle" text="Birth date" />
+							<m:Text 
+								text="{
+									path: 'employees>BirthDate',
+									formatter: '.formatters.verifyEmpyData'
+								}" 
+								class="sapUiSmallMarginBegin">
+							</m:Text>
+						</f:content>
+					</f:SimpleForm>
+				</ObjectPageSubSection>
+			</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="jobFileSection" title="Job file">
+				<subSections>
+					<ObjectPageSubSection id="occupation" title="Occupation" class="sapUiMediumMarginTop">
+						<f:SimpleForm 
+							editable="false"
+							layout="ResponsiveGridLayout">
+							<f:content>
+								<m:Label vAlign="Middle" text="Occupation" />
+								<m:Text 
+									text="{
+										path: 'employees>Title',
+										formatter: '.formatters.verifyEmpyData'
+									}" 
+									class="sapUiSmallMarginBegin">
+								</m:Text>
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection id="general" title="General" class="sapUiMediumMarginTop">
+						<f:SimpleForm 
+							editable="false"
+							layout="ResponsiveGridLayout">
+							<f:content>
+								<m:Label vAlign="Middle" text="Hire date" />
+								<m:Text 
+									text="{
+										path: 'employees>HireDate',
+										formatter: '.formatters.verifyEmpyData'
+									}" 
+									class="sapUiSmallMarginBegin">
+								</m:Text>
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="aboutSection" title="About" class="sapUiMediumMarginTop">
+				<subSections>
+					<ObjectPageSubSection id="descriptionSubsection" title="Description">
+						<f:SimpleForm 
+							editable="false"
+							layout="ResponsiveGridLayout">
+							<f:content>
+								<m:Label vAlign="Middle" text="Description" />
+								<m:Text 
+									text="{
+										path: 'employees>Notes',
+										formatter: '.formatters.verifyEmpyData'
+									}" 
+									class="sapUiSmallMarginBegin">
+								</m:Text>
+							</f:content>
+						</f:SimpleForm>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+        
+	</ObjectPageLayout>
+
+</core:FragmentDefinition>
