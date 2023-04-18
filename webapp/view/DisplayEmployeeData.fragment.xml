@@ -22,7 +22,7 @@
 
 				<snappedHeading>
 					<m:FlexBox fitContainer="true" alignItems="Center">
-						<m:Avatar src="../drawables/picture.jpg" class="sapUiTinyMarginEnd"/>
+						<m:Avatar src="/drawables/picture.jpg" class="sapUiTinyMarginEnd"/>
 						<m:Title text="{nwEntities>FirstName} {nwEntities>FirstName}" wrapping="true" />
 					</m:FlexBox>
 				</snappedHeading>
