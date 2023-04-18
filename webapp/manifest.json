@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/V2/Northwind/Northwind.svc/",
+                "uri": "/v2/northwind/northwind.svc/",
                 "type": "OData",
                 "settings": {
                     "annotations": [],
