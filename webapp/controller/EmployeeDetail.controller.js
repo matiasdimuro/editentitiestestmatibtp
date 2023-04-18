@@ -46,6 +46,7 @@ sap.ui.define([
             const sDisplayFragmentId = "DisplayEmployeeData";
             this._toggleDetailFragment(sDisplayFragmentId);
 
+            const sEditFragmentId = "EditEmployeeData";
             var oObjectPageLayout = Fragment.byId(sEditFragmentId, "employeeDetailPageLayout");
 			oObjectPageLayout.setShowFooter(false);
 
@@ -57,6 +58,7 @@ sap.ui.define([
             const sDisplayFragmentId = "DisplayEmployeeData";
             this._toggleDetailFragment(sDisplayFragmentId);
 
+            const sEditFragmentId = "EditEmployeeData";
             var oObjectPageLayout = Fragment.byId(sEditFragmentId, "employeeDetailPageLayout");
 			oObjectPageLayout.setShowFooter(false);
             
@@ -68,11 +70,18 @@ sap.ui.define([
         _onRouteMatched : function(oEvent) {
 
             var oPage = this.getView().byId('employeeDetailPage');
-            var sEmployeePath = oEvent.getParameter("arguments").id;
+            // var sEmployeePath = oEvent.getParameter("arguments").id;
+
+            // oPage.bindElement({
+            //     path: "/" + window.decodeURIComponent(sEmployeePath),
+            //     model: "employees"
+            // });
+
+            var nEmployeeID = oEvent.getParameter("arguments").id;
 
             oPage.bindElement({
-                path: "/" + window.decodeURIComponent(sEmployeePath),
-                model: "employees"
+                path: "/Employees(" + nEmployeeID + ")",
+                model: "nwEntities"
             });
 
             const sDisplayFragmentId = "DisplayEmployeeData";

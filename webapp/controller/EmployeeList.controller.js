@@ -43,10 +43,17 @@ sap.ui.define([
             var oItem = oEvent.getSource();
             var oBindingContext = oItem.getBindingContext("employees");
 
-            var sEmployeePath = oBindingContext.getPath();
+            // var sEmployeePath = oBindingContext.getPath();
+            var nEmployeeID = oBindingContext.getProperty("EmployeeID")
+            debugger;
+
+            // Pasarle ID, no PATH
+            // this._oRouter.navTo("employee", {
+            //     id: window.encodeURIComponent(sEmployeePath.substr(1))
+            // });
 
             this._oRouter.navTo("employee", {
-                id: window.encodeURIComponent(sEmployeePath.substr(1))
+                id: window.encodeURIComponent(nEmployeeID)
             });
 
             MessageToast.show("See employee details");
@@ -118,13 +125,6 @@ sap.ui.define([
             } else { 
                 this._oDialog.open(); 
             }
-        },
-
-
-        _getSplitAppObj : function() {
-
-            // var sSplitAppId = this.getView().getParent().getParent().getId();
-            return this.getView().getParent().getParent();
         }
 
     })

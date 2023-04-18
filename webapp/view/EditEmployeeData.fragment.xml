@@ -17,18 +17,18 @@
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
-					<m:Title text="{employees>FirstName} {employees>LastName}" wrapping="true"/>
+					<m:Title text="{nwEntities>FirstName} {nwEntities>LastName}" wrapping="true"/>
 				</expandedHeading>
 
 				<snappedHeading>
 					<m:FlexBox fitContainer="true" alignItems="Center">
 						<m:Avatar src="../drawables/picture.jpg" class="sapUiTinyMarginEnd"/>
-						<m:Title text="{employees>FirstName} {employees>FirstName}" wrapping="true" />
+						<m:Title text="{nwEntities>FirstName} {nwEntities>FirstName}" wrapping="true" />
 					</m:FlexBox>
 				</snappedHeading>
 
 				<expandedContent>
-					<m:Text text="{employees>Title}"/>
+					<m:Text text="{nwEntities>Title}"/>
 				</expandedContent>
 
 				<snappedContent>
@@ -63,37 +63,64 @@
 						<m:Button text="asas" />
 					</actions> -->
 					<f:SimpleForm 
-						editable="true"
-						layout="ResponsiveGridLayout">
+						editable="false"
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="2"
+						adjustLabelSpan="false">
 						<f:content>
 							<m:Label vAlign="Middle" text="Address" />
-							<m:Input value="{employees>Address}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Input value="{nwEntities>Address}" class="sapUiSmallMarginBegin"></m:Input>
 							<m:Label vAlign="Middle" text="City" />
-							<m:Input value="{employees>City}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Input value="{nwEntities>City}" class="sapUiSmallMarginBegin"></m:Input>
 							<m:Label vAlign="Middle" text="Region" />
-							<m:Input value="{employees>Region}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Input value="{nwEntities>Region}" class="sapUiSmallMarginBegin"></m:Input>
 							<m:Label vAlign="Middle" text="Country" />
-							<m:Input value="{employees>Country}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Input value="{nwEntities>Country}" class="sapUiSmallMarginBegin"></m:Input>
 						</f:content>
 					</f:SimpleForm>
 				</ObjectPageSubSection>
 				<ObjectPageSubSection id="contactSubsection" title="Contact" class="sapUiMediumMarginTop">
 					<f:SimpleForm 
-						editable="true"
-						layout="ResponsiveGridLayout">
+						editable="false"
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="2"
+						adjustLabelSpan="false">
 						<f:content>
 							<m:Label vAlign="Middle" text="Home phone" />
-							<m:Input value="{employees>HomePhone}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Input value="{nwEntities>HomePhone}" class="sapUiSmallMarginBegin"></m:Input>
 						</f:content>
 					</f:SimpleForm>
 				</ObjectPageSubSection>
 				<ObjectPageSubSection id="generalSubsection" title="General" class="sapUiMediumMarginTop">
 					<f:SimpleForm 
-						editable="true"
-						layout="ResponsiveGridLayout">
+						editable="false"
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="2"
+						adjustLabelSpan="false">
 						<f:content>
 							<m:Label vAlign="Middle" text="Birth date" />
-							<m:Input value="{employees>BirthDate}" class="sapUiSmallMarginBegin"></m:Input>
+							<m:Input value="{nwEntities>BirthDate}" class="sapUiSmallMarginBegin"></m:Input>
 						</f:content>
 					</f:SimpleForm>
 				</ObjectPageSubSection>
@@ -104,21 +131,39 @@
 				<subSections>
 					<ObjectPageSubSection id="occupation" title="Occupation" class="sapUiMediumMarginTop">
 						<f:SimpleForm 
-							editable="true"
-							layout="ResponsiveGridLayout">
+						editable="false"
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="2"
+						adjustLabelSpan="false">
 							<f:content>
 								<m:Label vAlign="Middle" text="Occupation" />
-								<m:Input value="{employees>Title}" class="sapUiSmallMarginBegin"></m:Input>
+								<m:Input value="{nwEntities>Title}" class="sapUiSmallMarginBegin"></m:Input>
 							</f:content>
 						</f:SimpleForm>
 					</ObjectPageSubSection>
 					<ObjectPageSubSection id="general" title="General" class="sapUiMediumMarginTop">
 						<f:SimpleForm 
-							editable="true"
-							layout="ResponsiveGridLayout">
+						editable="false"
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="2"
+						adjustLabelSpan="false">
 							<f:content>
 								<m:Label vAlign="Middle" text="Hire date" />
-								<m:Input value="{employees>HireDate}" class="sapUiSmallMarginBegin"></m:Input>
+								<m:Input value="{nwEntities>HireDate}" class="sapUiSmallMarginBegin"></m:Input>
 							</f:content>
 						</f:SimpleForm>
 					</ObjectPageSubSection>
@@ -129,11 +174,20 @@
 				<subSections>
 					<ObjectPageSubSection id="descriptionSubsection" title="Description">
 						<f:SimpleForm 
-							editable="true"
-							layout="ResponsiveGridLayout">
+						editable="false"
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="2"
+						adjustLabelSpan="false">
 							<f:content>
 								<m:Label vAlign="Middle" text="Description" />
-								<m:Input value="{employees>Notes}" class="sapUiSmallMarginBegin"></m:Input>
+								<m:Input value="{nwEntities>Notes}" class="sapUiSmallMarginBegin"></m:Input>
 							</f:content>
 						</f:SimpleForm>
 					</ObjectPageSubSection>

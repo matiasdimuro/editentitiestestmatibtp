@@ -17,18 +17,18 @@
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
-					<m:Title text="{employees>FirstName} {employees>LastName}" wrapping="true"/>
+					<m:Title text="{nwEntities>FirstName} {nwEntities>LastName}" wrapping="true"/>
 				</expandedHeading>
 
 				<snappedHeading>
 					<m:FlexBox fitContainer="true" alignItems="Center">
 						<m:Avatar src="../drawables/picture.jpg" class="sapUiTinyMarginEnd"/>
-						<m:Title text="{employees>FirstName} {employees>FirstName}" wrapping="true" />
+						<m:Title text="{nwEntities>FirstName} {nwEntities>FirstName}" wrapping="true" />
 					</m:FlexBox>
 				</snappedHeading>
 
 				<expandedContent>
-					<m:Text text="{employees>Title}"/>
+					<m:Text text="{nwEntities>Title}"/>
 				</expandedContent>
 
 				<snappedContent>
@@ -69,12 +69,21 @@
 					</actions> -->
 					<f:SimpleForm 
 						editable="false"
-						layout="ResponsiveGridLayout">
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="1"
+						emptySpanM="2"
+						emptySpanS="3"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="3"
+						adjustLabelSpan="false">
 						<f:content>
 							<m:Label vAlign="Middle" text="Address" />
 							<m:Text 
 								text="{
-									path: 'employees>Address',
+									path: 'nwEntities>Address',
 									formatter: '.formatters.verifyEmpyData'
 								}" 
 								class="sapUiSmallMarginBegin">
@@ -82,15 +91,16 @@
 							<m:Label vAlign="Middle" text="City" />
 							<m:Text 
 								text="{
-									path: 'employees>City',
+									path: 'nwEntities>City',
 									formatter: '.formatters.verifyEmpyData'
 								}" 
+								emptyIndicatorMode="On"
 								class="sapUiSmallMarginBegin">
 							</m:Text>
 							<m:Label vAlign="Middle" text="Region" />
 							<m:Text 
 								text="{
-									path: 'employees>Region',
+									path: 'nwEntities>Region',
 									formatter: '.formatters.verifyEmptyData'
 								}" 
 								class="sapUiSmallMarginBegin">
@@ -98,7 +108,7 @@
 							<m:Label vAlign="Middle" text="Country" />
 							<m:Text 
 								text="{
-									path: 'employees>Country',
+									path: 'nwEntities>Country',
 									formatter: '.formatters.verifyEmpyData'
 								}" 
 								class="sapUiSmallMarginBegin">
@@ -109,12 +119,21 @@
 				<ObjectPageSubSection id="contactSubsection" title="Contact" class="sapUiMediumMarginTop">
 					<f:SimpleForm 
 						editable="false"
-						layout="ResponsiveGridLayout">
+						layout="ResponsiveGridLayout"
+						columnsL="12"
+						columnsM="12"
+						emptySpanL="1"
+						emptySpanM="2"
+						emptySpanS="3"
+						labelSpanL="1"
+						labelSpanM="2"
+						labelSpanS="3"
+						adjustLabelSpan="false">
 						<f:content>
 							<m:Label vAlign="Middle" text="Home phone" />
 							<m:Text 
 								text="{
-									path: 'employees>HomePhone',
+									path: 'nwEntities>HomePhone',
 									formatter: '.formatters.verifyEmpyData'
 								}" 
 								class="sapUiSmallMarginBegin">
@@ -124,13 +143,22 @@
 				</ObjectPageSubSection>
 				<ObjectPageSubSection id="generalSubsection" title="General" class="sapUiMediumMarginTop">
 					<f:SimpleForm 
-						editable="false"
-						layout="ResponsiveGridLayout">
+							editable="false"
+							layout="ResponsiveGridLayout"
+							columnsL="12"
+							columnsM="12"
+							emptySpanL="1"
+							emptySpanM="2"
+							emptySpanS="3"
+							labelSpanL="1"
+							labelSpanM="2"
+							labelSpanS="3"
+							adjustLabelSpan="false">
 						<f:content>
 							<m:Label vAlign="Middle" text="Birth date" />
 							<m:Text 
 								text="{
-									path: 'employees>BirthDate',
+									path: 'nwEntities>BirthDate',
 									formatter: '.formatters.verifyEmpyData'
 								}" 
 								class="sapUiSmallMarginBegin">
@@ -146,12 +174,21 @@
 					<ObjectPageSubSection id="occupation" title="Occupation" class="sapUiMediumMarginTop">
 						<f:SimpleForm 
 							editable="false"
-							layout="ResponsiveGridLayout">
+							layout="ResponsiveGridLayout"
+							columnsL="12"
+							columnsM="12"
+							emptySpanL="1"
+							emptySpanM="2"
+							emptySpanS="3"
+							labelSpanL="1"
+							labelSpanM="2"
+							labelSpanS="3"
+							adjustLabelSpan="false">
 							<f:content>
 								<m:Label vAlign="Middle" text="Occupation" />
 								<m:Text 
 									text="{
-										path: 'employees>Title',
+										path: 'nwEntities>Title',
 										formatter: '.formatters.verifyEmpyData'
 									}" 
 									class="sapUiSmallMarginBegin">
@@ -162,12 +199,21 @@
 					<ObjectPageSubSection id="general" title="General" class="sapUiMediumMarginTop">
 						<f:SimpleForm 
 							editable="false"
-							layout="ResponsiveGridLayout">
+							layout="ResponsiveGridLayout"
+							columnsL="12"
+							columnsM="12"
+							emptySpanL="1"
+							emptySpanM="2"
+							emptySpanS="3"
+							labelSpanL="1"
+							labelSpanM="2"
+							labelSpanS="3"
+							adjustLabelSpan="false">
 							<f:content>
 								<m:Label vAlign="Middle" text="Hire date" />
 								<m:Text 
 									text="{
-										path: 'employees>HireDate',
+										path: 'nwEntities>HireDate',
 										formatter: '.formatters.verifyEmpyData'
 									}" 
 									class="sapUiSmallMarginBegin">
@@ -183,12 +229,21 @@
 					<ObjectPageSubSection id="descriptionSubsection" title="Description">
 						<f:SimpleForm 
 							editable="false"
-							layout="ResponsiveGridLayout">
+							layout="ResponsiveGridLayout"
+							columnsL="12"
+							columnsM="12"
+							emptySpanL="1"
+							emptySpanM="2"
+							emptySpanS="3"
+							labelSpanL="1"
+							labelSpanM="2"
+							labelSpanS="3"
+							adjustLabelSpan="false">
 							<f:content>
 								<m:Label vAlign="Middle" text="Description" />
 								<m:Text 
 									text="{
-										path: 'employees>Notes',
+										path: 'nwEntities>Notes',
 										formatter: '.formatters.verifyEmpyData'
 									}" 
 									class="sapUiSmallMarginBegin">

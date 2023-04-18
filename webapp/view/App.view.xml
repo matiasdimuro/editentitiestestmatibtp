@@ -16,7 +16,9 @@
     
         <Page id="appPage" showHeader="false">
     
+            <!-- StretchCompressMode -->
             <SplitApp 
+                masterButtonText="Employees List"
                 mode="ShowHideMode" 
                 id="SplitApp" 
                 initialDetail="mainAppPageView" 

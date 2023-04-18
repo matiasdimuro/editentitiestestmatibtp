@@ -3,6 +3,6 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
 
-    <Page id="blankPage" showHeader="false" />
+    <Page id="blankPage" showHeader="true"/>
 
 </mvc:XMLView>
