@@ -87,7 +87,12 @@
             "nwEntities": {
                 "dataSource": "mainService",
                 "preload": true,
-                "settings": {}
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
             },
             "employees": {
                 "type": "sap.ui.model.json.JSONModel",
