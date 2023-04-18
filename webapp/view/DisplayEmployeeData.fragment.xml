@@ -54,7 +54,7 @@
 		</headerTitle>
 
 		<headerContent>
-			<m:Avatar src="../drawables/picture.jpg" class="sapUiSmallMarginEnd" displaySize="L" />
+			<m:Avatar src="/drawables/picture.jpg" class="sapUiSmallMarginEnd" displaySize="L" />
 		</headerContent>
 
         <sections>
