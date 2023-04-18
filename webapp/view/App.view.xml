@@ -29,7 +29,7 @@
                 </masterPages>
 
                 <detailPages>
-                    <mvc:XMLView id="mainAppPageView" viewName="hexagon.editentitytestmatibtp.view.MainAppPage"/>
+                    <!-- <mvc:XMLView id="mainAppPageView" viewName="hexagon.editentitytestmatibtp.view.MainAppPage"/> -->
                     <!-- <mvc:XMLView id="employeeDetailView" viewName="hexagon.editentitytestmatibtp.view.EmployeeDetail" />  -->
                 </detailPages>
 
