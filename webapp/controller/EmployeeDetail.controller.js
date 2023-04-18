@@ -7,6 +7,8 @@ sap.ui.define([
 ], function(Controller, Fragment, MessageToast, formatters) {
     'use strict';
     
+    var sPath = jQuery.sap.getModulePath("hexagon/editentitytestmatibtp");
+    
     return Controller.extend("hexagon.editentitytestmatibtp.controller.EmployeeDetail", {
 
         formatters : formatters,
@@ -18,6 +20,14 @@ sap.ui.define([
             this._detailFragments = {};
 
             this._oRouter.getRoute("employee").attachPatternMatched(this._onRouteMatched, this);
+
+            var oModel = this.getOwnerComponent().getModel("image");
+            var oData = {
+                path: sPath + "/drawables/picture.jpg"
+            }
+
+            oModel.setData(oData);
+
         },
 
 
